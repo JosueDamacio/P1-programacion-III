@@ -1,4 +1,4 @@
-/* Estilos globales */
+/*! Estilos globales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,11 +12,13 @@ h2 {
 }
 
 header {
-
+  background-color: #2dbd4d;
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
-header > a {
+header>a {
   text-decoration: none;
   color: white;
 }
@@ -25,7 +27,7 @@ header > a {
   font-size: 1.5rem;
 }
 
-.logo > a {
+.logo>a {
   text-decoration: none;
   color: white;
 }
@@ -41,22 +43,39 @@ header > a {
   font-size: 1rem;
 }
 
+/*!HEADER*/
+
+/*aplico el mismo estilo a 2 clases*/
+.nombreAlumno,
+.carrito {
+  color: white;
+  padding-top: 8px;
+}
 
 
-/* Seccion productos */
+/*! Seccion productos */
 .seccion-productos {
   padding: 20px;
+
+}
+
+#contenedor-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
 }
 
 .card-producto {
-  border: 1px solid #ccc;
-
+  border: 1px solid #53505046;
+  width: 200px;
 }
 
 .card-producto img {
-  width: 130px;
+  width: 150px;
   border-radius: 5px;
-  height: 115px;
+  height: 125px;
 }
 
 .card-producto h3 {
@@ -69,17 +88,28 @@ header > a {
   color: #333;
 }
 
+.card-producto button {
+  background-color: #31d855;
+}
+
 .card-producto button:hover {
   background-color: #218838;
 }
 
 
 
-/* Seccion carrito */
+/*! Seccion carrito */
 .seccion-carrito {
   padding: 20px;
   background-color: #f8f9fa;
   border-top: 1px solid #ccc;
+}
+
+.bloque-item {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 
 #items-carrito {
@@ -87,12 +117,17 @@ header > a {
   list-style-type: none;
 }
 
-.nombre-item, .info-carrito {
+.nombre-item,
+.info-carrito {
   font-size: 20px;
 }
 
 .boton-eliminar {
+  margin-top: 20px;
   cursor: pointer;
+  color: white;
+  background-color: red;
+  height: 30px;
 }
 
 .hidden {
