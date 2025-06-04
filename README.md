@@ -64,7 +64,7 @@ Implementar una función de filtro, que se dispare al escribir en un campo input
 3. Incorporar la funcion `eliminarProducto()`. Este debe estar asociado al boton del carrito
 
 
-### Ejercicio 6 _____________   1 punto
+### Ejercicio 6 _____________   1 punto ✅
 - Almacena los productos del carrito en `localStorage`.
 - Los productos en el localStorage deben estar además con los últimos cambios de carrito y los productos que se hayan eliminado del carrito
 - Si existen productos previamente en el localStorage, deben poder verse cuando se cargue la pagina

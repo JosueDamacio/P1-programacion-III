@@ -71,29 +71,40 @@ function mostrarProductos(array) {
 
 //calcula y muestra los productos añadidos al carro y modifica el valor total
 function mostrarCarrito(array) {
-    //los contadores y acumuladores van acá para cambiar dinamicamnete
-    //segun la interaccion que tenga el usuario
-    let htmlCarrito = "";
-    let htmlPrecioTotal = 0;
-    let htmlCantidadFrutas = 0;
-    array.forEach(producto => {
-        htmlCarrito += `
+    if (carrito.length > 0) {
+        //los contadores y acumuladores van acá para cambiar dinamicamnete
+        //segun la interaccion que tenga el usuario
+        let htmlCarrito = "";
+        let htmlPrecioTotal = 0;
+        let htmlCantidadFrutas = 0;
+        array.forEach(producto => {
+            htmlCarrito += `
         <li class="bloque-item">
             <p class="nombre-item">${producto.nombre} - ${producto.precio}</p>
             <button onclick="eliminarFruta(${producto.id})" class= "boton-eliminar">Eliminar</button>
         </li>
         `;
-        htmlPrecioTotal += (producto.precio);
-        htmlCantidadFrutas += 1;
-    });
-    itemsCarrito.innerHTML = htmlCarrito;
-    precioTotal.innerHTML = htmlPrecioTotal;
-    cantidadFrutas.innerHTML = htmlCantidadFrutas;
+            htmlPrecioTotal += (producto.precio);
+            htmlCantidadFrutas += 1;
+        });
+        itemsCarrito.innerHTML = htmlCarrito;
+        precioTotal.innerHTML = htmlPrecioTotal;
+        cantidadFrutas.innerHTML = htmlCantidadFrutas;
 
-    console.log(carrito);
+        console.log(carrito);
+
+        guardarCarritoEnStorage();
+        console.log("guardando en el storage");
+    }
+    else {
+        console.log("carrito vacio");
+    }
+
 }
 
-//?--------CRUD PRODUCTOS---------
+
+//?------------------------------------------------------------------------------------
+//?------------------------------------CRUD CARRITO------------------------------------
 
 function agregarFruta(id) {
     //agragar al carrito por su ID de producto
@@ -119,6 +130,23 @@ function eliminarFruta(id) {
     // mostrarCarrito(carrito);
 
 }
+//?------------------------------------------------------------------------------------
+//?------------------------FUNCIONES DE LocalStorage-----------------------------------
+
+function guardarCarritoEnStorage() {
+    //los objetos del carrito se guardan en forma de string en el json
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoDesdeStorage() {
+    //con getItem se levanta lo guardado en carrito y duplica en carritoGuardado
+    let carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+        carrito = JSON.parse(carritoGuardado);
+        mostrarCarrito(carrito);
+    }
+    console.log("cargando del storage");
+}
 
 //?------------------------------------------------------------------------------------
 //?------------------------FUNCIONES DE ORDENAMIENTO-----------------------------------
@@ -130,7 +158,7 @@ function ordenarMenorAMayor() {
 }
 
 function ordenarPorNombre() {
-    const copia = arrayFrutas.slice();
+    let copia = arrayFrutas.slice();
     //hago comparacion formatenado los nombres un poco, uso localcompare con "es" para que use el idioma
     copia.sort((a, b) => a.nombre.toLowerCase().localeCompare(b.nombre.toLowerCase(), "es"));
     mostrarProductos(copia);
@@ -146,6 +174,7 @@ function init() {
     mostrarProductos(arrayFrutas);
     mostrarCarrito(carrito);
     imprimirDatosAlumno();
+    cargarCarritoDesdeStorage();
 
 }
 init();
