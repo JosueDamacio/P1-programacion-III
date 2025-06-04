@@ -130,6 +130,7 @@ function eliminarFruta(id) {
 function guardarCarritoEnStorage() {
     //los objetos del carrito se guardan en forma de string en el json
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    console.log("guardando en storage");
 }
 
 function cargarCarritoDesdeStorage() {
@@ -171,10 +172,10 @@ function imprimirDatosAlumno() {
 }
 
 function init() {
-    mostrarProductos(arrayFrutas);
-    mostrarCarrito(carrito);
     imprimirDatosAlumno();
     cargarCarritoDesdeStorage();
+    mostrarProductos(arrayFrutas);
+    mostrarCarrito(carrito);
 
 }
 init();
