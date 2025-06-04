@@ -81,7 +81,7 @@ Implementar una función de filtro, que se dispare al escribir en un campo input
 - Implementa la funcionalidad para ordenar los productos en estos dos botones. Un boton debe ordenar por nombre los productos y el otro por precio de menor a mayor
 
 
-### Ejercicio 9 _____________   0.5 puntos
+### Ejercicio 9 _____________   0.5 puntos ✅
 - Implementa la funcionalidad para Vaciar carrito. Crea un botón en la sección carrito que vacíe todo el carrito.
 
 

@@ -71,7 +71,6 @@ function mostrarProductos(array) {
 
 //calcula y muestra los productos añadidos al carro y modifica el valor total
 function mostrarCarrito(array) {
-    if (carrito.length > 0) {
         //los contadores y acumuladores van acá para cambiar dinamicamnete
         //segun la interaccion que tenga el usuario
         let htmlCarrito = "";
@@ -94,11 +93,6 @@ function mostrarCarrito(array) {
         console.log(carrito);
 
         guardarCarritoEnStorage();
-        console.log("guardando en el storage");
-    }
-    else {
-        console.log("carrito vacio");
-    }
 
 }
 
@@ -162,6 +156,12 @@ function ordenarPorNombre() {
     //hago comparacion formatenado los nombres un poco, uso localcompare con "es" para que use el idioma
     copia.sort((a, b) => a.nombre.toLowerCase().localeCompare(b.nombre.toLowerCase(), "es"));
     mostrarProductos(copia);
+}
+
+function vaciarCarrito(){
+    // no se si era asi pero me dio mucha risa JASJASJAJS
+    carrito = [];
+    mostrarCarrito(carrito);
 }
 
 function imprimirDatosAlumno() {
