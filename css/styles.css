@@ -22,6 +22,15 @@ header>a {
   text-decoration: none;
   color: white;
 }
+button{
+  background-color: #094b0c;
+  color: white;
+  margin-bottom: 20px;
+  border: 0px;
+  width: 120px;
+  height: 35px;
+  border-radius: 8px;
+}
 
 .logo {
   font-size: 1.5rem;
@@ -45,8 +54,8 @@ header>a {
 
 /*!HEADER*/
 
-/*aplico el mismo estilo a 2 clases*/
-.nombreAlumno,
+/*aplico el mismo estilo a 1 id y 1 clase*/
+#nombreAlumno,
 .carrito {
   color: white;
   padding-top: 8px;
@@ -56,7 +65,7 @@ header>a {
 /*! Seccion productos */
 .seccion-productos {
   padding: 20px;
-
+  text-align: center;
 }
 
 #contenedor-productos {
@@ -68,8 +77,9 @@ header>a {
 }
 
 .card-producto {
-  border: 1px solid #53505046;
+  border: 2px solid #53505046;
   width: 200px;
+  border-radius: 10px;
 }
 
 .card-producto img {
@@ -107,9 +117,10 @@ header>a {
 
 .bloque-item {
   display: flex;
-  justify-content: space-around;
-  margin-right: 150px;
-  margin-left: 150px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 500px;
+  margin-right: 500px;
 }
 
 #items-carrito {

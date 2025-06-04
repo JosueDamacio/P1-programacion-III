@@ -18,8 +18,8 @@
             <div class="logo">Frutería</div>
         </a>
 
-        <div class="nombreAlumno">
-            Josue Damacio
+        <div id="nombreAlumno">
+            
         </div>
 
         <input type="text" placeholder="Buscar..." id="barra-busqueda">
@@ -33,7 +33,12 @@
     <!-- Contenedor principal -->
     <main>
         <section class="seccion-productos">
+            
+
             <h2>Nuestras frutas</h2>
+            <button onclick="ordenarPorNombre()">Ordenar Frutas Por Nombre</button>
+            <button onclick="ordenarMenorAMayor()">Ordenar Menos a Más caro</button>
+
             <div id="contenedor-productos">
                 <!-- acá va el contenido dinamico -->
             </div>
@@ -51,6 +56,9 @@
             <div class="total-carrito">
                 <p>Total: <span id="precio-total">$0.00</span></p>
 
+            </div>
+            <div class="eliminar-carrito">
+                <!-- <button id="eliminar-todo">Eliminar Todos</button> -->
             </div>
         </section>
 
